@@ -138,37 +138,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void search() {
-        /*
-        //Buscar entre los contactos
-            //ContentProvider -> consultor o Proveedor de Contenidos
-        // Queries the user dictionary and returns results
-        Cursor cursor = getContentResolver().query(
-                UserDictionary.Words.CONTENT_URI,                   // The content URI of the words table Devuelve informacion como en forma de tabla
-                new String[]{"projection"},                        // The columns to return for each row  Restringe los valores para filtrar
-                                                                                                        //Ejemplo: Cuando pones que columnas quieres en un SELECT
-                "selectionClause",                                  // Selection criteria //Funciona como el filtro del WHERE, sin la palabra reservada
-                new String[] {"selectionArgs"},                     // Selection criteria
-                "sortOrder");                                       // The sort order for the returned rows */
-
-        /*Uri uri = ContactsContract.Contacts.CONTENT_URI;
-        String proyeccion[] = new String[] {ContactsContract.Contacts.DISPLAY_NAME};
-        String seleccion = ContactsContract.Contacts.IN_VISIBLE_GROUP + " = ? and " +
-                ContactsContract.Contacts.HAS_PHONE_NUMBER + "= ?";
-        String argumentos[] = new String[]{"1","1"};
-        //seleccion = null;
-        //argumentos = null;
-        String orden = ContactsContract.Contacts.DISPLAY_NAME + " collate localized asc";
-        Cursor cursor = getContentResolver().query(uri, proyeccion, seleccion, argumentos, orden);
-        String columnas [] = cursor.getColumnNames();
-        for (String s: columnas) {
-            Log.v(TAG,s);
-        }
-        String displayName;
-        int columna = cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME);
-        while(cursor.moveToNext()){
-           displayName = cursor.getString(columna);
-           Log.v(TAG, displayName);
-        }*/
 
         Uri uri2 = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
         String proyeccion2[] = new String[] {ContactsContract.CommonDataKinds.Phone.NUMBER,
