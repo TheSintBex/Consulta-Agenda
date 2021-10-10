@@ -186,13 +186,14 @@ public class MainActivity extends AppCompatActivity {
 
         int columnaNombre = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME);
         int columnaNum = cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-        String nombre, numero;
+        String nombre = "";
+        String numero;
 
         while (cursor2.moveToNext()){
-            nombre = cursor2.getString(columnaNombre);
             numero = cursor2.getString(columnaNum);
             numero = numero.replaceAll("[^0-9]", "");
             if (numero.equals(etPhone.getText().toString())){
+                nombre += cursor2.getString(columnaNombre) + " ";
                 Log.v(TAG, nombre + ": " + numero);
                 tvContact.setText(nombre);
             }
